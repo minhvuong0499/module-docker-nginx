@@ -30,7 +30,7 @@ variable "public_key_path" {
 
 variable "key_name" {
    description = "AWS key name"
-   default     = "Access-EC2"
+   default     = "/home/vuongdm/terraform/Access-EC2.pem"
 }
 
 variable "instance_count" {

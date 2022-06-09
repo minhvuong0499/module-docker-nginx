@@ -46,9 +46,9 @@ resource "aws_security_group" "allow_ports" {
        cidr_blocks = ["0.0.0.0/0"]
    }
   
-#     tags {
-#        Name = "Allow SSH and HTTP"
-#    }
+    tags {
+        Name = "Allow SSH and HTTP"
+    }
 }
 resource "aws_instance" "webserver" {
    instance_type          = "${var.instance_type}"
@@ -59,7 +59,7 @@ resource "aws_instance" "webserver" {
    subnet_id              = "${element(module.vpc.public_subnets,count.index)}"
    user_data              = "${file("/home/vuongdm/terraform/init.sh")}"
   
-#    tags {
-#        Name = "Webserver"
-#    }
+   tags {
+       Name = "Webserver"
+    }
 }
